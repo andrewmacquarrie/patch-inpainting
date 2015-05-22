@@ -3,15 +3,14 @@ close all;
 clc;
 
 
-image = 'cow';
+%image = 'cow';
 % image = 'bungee';
 % image = 'man';
 
-Aorg = imread([image '.png']);
-
-Borg = imread('bungee.png');
-
-Morg = imread([image '-mask.png']);
+filen = 'rectilinCrew';
+Aorg = imread(['.\WestminsterFrame\' filen '.png']);
+Borg = imread(['.\WestminsterFrame\' 'equirectCrew' 'Target.png']);
+Morg = imread(['.\WestminsterFrame\' filen '-mask.png']);
 
 tic
 A=patch_inpaint(Aorg,Borg,Morg);
